@@ -1,5 +1,7 @@
 # set veri tipinin en önemli özellikleri her elemandan 1 tane olmsası ve indexlenme özelliğinin olmamasıdır.
 # süslü parantezler içinde yazılır.
+# listedeki elemanları değiştiremezsiniz. sadece ekleme yapabiliriz.
+# 
 
 set ={"konya","karaman","aksaray"}
 
@@ -46,7 +48,9 @@ print(set2)
 A = {1, 2, 3, 4, 5}
 B = {4, 5, 6, 7, 8}
 C = A.difference(B)
+print(A-B)
 print(C)
+# / {1, 2, 3}
 # / {1, 2, 3}
 
 
@@ -66,6 +70,8 @@ set1 = {1, 2, 3, 4, 5}
 set2 = {4, 5, 6, 7, 8}
 intersection_set = set1.intersection(set2)
 print(intersection_set)
+print(set1 & set2)
+# / ( 4 , 5 )
 # / ( 4 , 5 )
 
 
@@ -122,7 +128,14 @@ print(my_set)
 # / {"apple", "cherry"}
 
 
-# 14 - symmetric_difference () metodu
+# 14 - symmetric_difference () metodu iki kümenin birleşiminden farklı olan elemanları içeren yeni bir kümeyi döndürür. Yani, A kümesi ile B kümesinin birleşimi kümenin tamamını verirken, symmetric_difference() metodu A kümesi ile B kümesinin kesişiminden farklı olan elemanları içeren yeni bir küme oluşturur.
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+symmetric_difference_set = set1.symmetric_difference(set2)
+print(set1 ^ set2)
+print(symmetric_difference_set)
+# / {1, 2, 3, 6, 7, 8}
+# / {1, 2, 3, 6, 7, 8}
 
 
 
@@ -134,8 +147,36 @@ print(my_set)
 set1 = {1, 2, 3, 4, 5}
 set2 = {4, 5, 6, 7, 8}
 union_set = set1.union(set2)
+print(set1 | set2)
 print(union_set)
+# / {1, 2, 3, 4, 5, 6, 7, 8}
 # / {1, 2, 3, 4, 5, 6, 7, 8}
 
 
-# 17 - update () metodu
+# 17 - update () metodu birden fazla eleman eklenmesi durumunda kullanılır.
+set1 = {1, 2, 3, 4, 5}
+set1.update({9,8,7})
+print(set1)
+
+# / {1, 2, 3, 4, 5, 7, 8, 9}
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------# 
+
+studentset={"ozan","naim","kazım","can"}
+
+# for i in studentset:
+#     print(i)            # listedeki bütün elemanları döner
+
+# if "ozan" in studentset:
+#     print("ozan listede var")
+# else:
+#     print("ozan listede yok")
+
+isim = input("lütfen isim giriniz: ")
+
+if isim in studentset:
+    print("{} listede var".format(isim))
+else:
+    print("{} listede yok tekrar deneyin...".format(isim))
